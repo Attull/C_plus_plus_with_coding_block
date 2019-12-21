@@ -59,7 +59,7 @@ int main()
     int ch;
     while(1)
     {
-     cout<<"\nenter your choice \n1.Linear search \n2.Binary search \n3.EXIT\n";
+     cout<<"\nenter your choice \n1.Linear search \n2.Binary search \n3.Search another element \n4.EXIT\n";
      cin>>ch;
      switch(ch)
      {
@@ -67,7 +67,10 @@ int main()
                    break;
          case 2:  bsearch(arr,srch,n);
                    break;
-         case 3:  exit(1);
+         case 3:  cout<<"enter the element to search \t";
+                  cin>>srch;
+                  break;
+         case 4:  exit(1);
      }
     }
 }

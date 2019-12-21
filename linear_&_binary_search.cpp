@@ -2,7 +2,7 @@
 #include<cstdlib>
 using namespace std;
 
-void lsearch(int arr[],int s,int n)
+void lsearch(int arr[],int s,int n)                        //Linear search
 {
     int flag=0;
     for(int i=0;i<n;++i)
@@ -16,7 +16,7 @@ void lsearch(int arr[],int s,int n)
         cout<<"\t element not found\n";
 }
 
-void bsearch(int arr[],int s,int n)
+void bsearch(int arr[],int s,int n)                       //Binary search
 {
     int left=0;
     int right=n-1;
@@ -24,7 +24,7 @@ void bsearch(int arr[],int s,int n)
 
     while(left<=right)
     {
-        mid =(left+right)/2;
+        mid =(left+right)/2;                       //changing mid value in each iteration
         if(arr[mid]==s)
         {
             flag=1;

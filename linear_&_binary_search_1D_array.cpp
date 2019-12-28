@@ -35,7 +35,6 @@ void bsearch(int arr[],int s,int n)                       //Binary search
         else
             left=mid+1;
     }
-
     if(flag==1)
         cout<<"\t element is found\n";
     else

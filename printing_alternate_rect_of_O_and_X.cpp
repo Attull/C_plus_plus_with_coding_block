@@ -30,9 +30,7 @@ void rec(char a[][10],int r,int c)
 
         while(first_row<=last_row && first_col <=last_col )
         {
-          //if(first_row%2==0 && first_col%2==0)
-
-               for(int i=first_row;i<=last_col;++i)
+             for(int i=first_row;i<=last_col;++i)
                 {
                     a[first_row][i]=p;
                 }

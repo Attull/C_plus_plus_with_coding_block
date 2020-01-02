@@ -24,64 +24,46 @@ void printmatrix(char a[][10],int R,int C)
 
 void rec(char a[][10],int r,int c)
 {
+        char p='O';
         int first_row=0,last_row=r-1;
         int first_col=0,last_col=c-1;
 
         while(first_row<=last_row && first_col <=last_col )
         {
-          if(first_row%2==0 && first_col%2==0)
-          {
+          //if(first_row%2==0 && first_col%2==0)
+
                for(int i=first_row;i<=last_col;++i)
                 {
-                    a[first_row][i]='O';
+                    a[first_row][i]=p;
                 }
                 ++first_row;
 
                 for(int i=first_row;i<=last_row;++i)
                 {
-                    a[i][last_col]='O';
+                    a[i][last_col]=p;
                 }
                 --last_col;
 
-                for(int i=last_col;i>=first_col;--i)
+                if(first_row < last_row)
                 {
-                    a[last_row][i]='O';
+                    for(int i=last_col;i>=first_col;--i)
+                    {
+                        a[last_row][i]=p;
+                    }
+                    --last_row;
                 }
-                --last_row;
 
-                for(int i=last_row;i>=first_row;--i)
+                if(first_col < last_col)
                 {
-                    a[i][first_col]='O';
+                    for(int i=last_row;i>=first_row;--i)
+                    {
+                        a[i][first_col]=p;
+                    }
+                    ++first_col;
                 }
-                ++first_col;
+
+                 p=(p=='O') ? 'X' :'O';              //flip the value of p for next iteration
           }
-          else
-          {
-                for(int i=first_row;i<=last_col;++i)
-                {
-                    a[first_row][i]='x';
-                }
-                ++first_row;
-
-                for(int i=first_row;i<=last_row;++i)
-                {
-                    a[i][last_col]='x';
-                }
-                --last_col;
-
-                for(int i=last_col;i>=first_col;--i)
-                {
-                    a[last_row][i]='x';
-                }
-                --last_row;
-
-                for(int i=last_row;i>=first_row;--i)
-                {
-                    a[i][first_col]='x';
-                }
-                ++first_col;
-            }
-        }
 
 }
 
@@ -89,11 +71,15 @@ int main()
 {
   char a[10][10];
   int row,col;
+  cout<<"Enter number of rows & column \n";
   cin>> row>>col;
 
+  cout<<"Enter the input for matrix \n";
   readmatrix(a,row,col);
   rec(a,row,col);
 
   cout<<"\nmatrix of alternate rectangle of 'o' and 'x' \n"<<endl;
   printmatrix(a,row,col);
+
+  return 0;
 }

@@ -21,7 +21,6 @@ void printmatrix(char a[][10],int R,int C)
      }
  }
 
-
 void rec(char a[][10],int r,int c)
 {
         char p='O';

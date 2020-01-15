@@ -7,9 +7,9 @@ int sub_sum(int a[][2])
       {
         for(int lj=0;lj<2;++lj)                   //this & above loop set top left value
          {
-            for(int bi=0;bi<2;++bi)
+            for(int bi=li+1;bi<2;++bi)
             {
-                 for(int bj=0;bj<2;++bj)          //this & above loop set bottom right value
+                 for(int bj=lj+1;bj<2;++bj)          //this & above loop set bottom right value
                  {
                      for(int i=li;i<=bi;++i)       //now we run the loop from top left value to bottom right value
                      {

@@ -6,7 +6,7 @@ void insertion_sort(int a[],int n)
 {
     int j;
     int temp;
-    for(int i=0;i<n;++i)
+    for(int i=1;i<n;++i)
     {
         temp=a[i];
         j=i-1;

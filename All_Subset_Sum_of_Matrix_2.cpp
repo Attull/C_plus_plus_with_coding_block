@@ -11,7 +11,7 @@ void sub_sum(int a[][C])
          {
             int x=(i+1)*(j+1);
             int y=(R-i)*(C-j);
-            sum+=a[i][j]*(i+1)*x*y;        //final sum is a[][] * the no. of submatrix the cell will be present
+            sum+=a[i][j]*x*y;        //final sum is a[][] * the no. of submatrix the cell will be present
          }
 
     cout<<sum;

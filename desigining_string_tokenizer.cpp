@@ -1,0 +1,54 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+char *mystrtok(char *str,char delim)
+{  //string and single char acts as delimeter
+
+    static char *input=NULL;
+    if(str!=NULL)
+    {
+        input=str;
+    }
+
+    //basr case
+    if(input==NULL)
+        return NULL;
+
+    //now start extracting array and store them in array
+    char *output=new char[strlen(input)+1];
+    int i;
+    for(i=0;input[i]!='\0';++i)
+    {
+        if(input[i]!=delim)
+        {
+            output[i]=input[i];
+        }
+        else
+        {
+            output[i]=NULL;
+            input=input+i+1;
+            return output;
+        }
+    }
+    output[i]='\0';
+    input=NULL;
+    return output;
+
+}
+
+int main()
+{
+    char s[100]="quarantine become boring now";
+
+    char *ptr=mystrtok(s,' ');              //so this create a new array where first element get stored and its address is return
+    cout<<ptr<<endl;
+
+    while(ptr!=NULL)
+    {
+        ptr=mystrtok(NULL,' ');
+        cout<<ptr<<endl;
+    }
+
+    return 0;
+}

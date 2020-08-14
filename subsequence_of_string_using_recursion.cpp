@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void subsequence(char in[],char out[],int i,int j)          //subset or subsequence
+void subsequence(char in[],char out[],int i,int j)          //subset or subsequence  and sub array include continues part
 {
     //base case
     if(in[i]=='\0')                //if we are at last position of input array

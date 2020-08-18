@@ -10,14 +10,14 @@ int perfect_string(string s,int n,int k,char ch)
 	int cnt=0;
 	int maxlen=1;
 
-	while(r<n)
+	while(r<n)                          //traverse the whole string
 	{
-		if(s[r]!=ch)
-			cnt++;
+		if(s[r]!=ch)                    // if char is not same with current char
+			cnt++;                      //increase cnt
 
-		while(cnt>k)
-		{
-			if(s[l]!=ch)
+		while(cnt>k)                    //while cnt of unmatch char is become greater than given k
+		{                               // we iterate again from begining and decrese cnt where we
+			if(s[l]!=ch)                // we get unmatch char
 				--cnt;
 
 			++l;

@@ -42,10 +42,21 @@ void print_list(node*&head)
     cout<<endl;
 }
 
+void removeloop(Node *&head,Node *&fast)
+{
+    Node *slow=head;
+    while(slow->next!=fast->next)
+    {
+        slow=slow->next;
+        fast=fast->next;
+    }
+    fast->next=NULL;
+}
+
 bool cycle_det(node *&head)
 {
     node *a=head;
-    node *b=head->next;
+    node *b=head;
 
     while(b!=NULL && b->next!=NULL)
     {
